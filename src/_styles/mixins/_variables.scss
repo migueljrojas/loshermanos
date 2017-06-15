@@ -1,0 +1,31 @@
+$white: #fff;
+$black: #000;
+$darkestGray: #484848;
+$darkGray: #6b6b6b;
+$midGray: #999;
+$lightGray: #ebebeb;
+$lightestGray: #f4f7f8;
+$pink: #f172ac;
+$green: #93cc22;
+$darkGreen: #5e8a06;
+$yellow: #fff799;
+
+$link: $pink;
+$linkHover: darken($pink, .2);
+$text: $darkGray;
+$textLight: $white;
+$textDark: $darkestGray;
+$accent: $green;
+$accentDark: $darkGreen;
+$bg: $white;
+$bgSecondary: $lightGray;
+$bgDark: $darkestGray;
+
+$base: 40px;
+
+$duration: 0.3s;
+$easing: cubic-bezier(.785, .135, .15, .86);
+$easingLight: ease;
+
+$mainFont: 'Montserrat', sans-serif;
+$altFont: 'Oswald', sans-serif;

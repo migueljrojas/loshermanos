@@ -1,0 +1,43 @@
+a._button,
+button._button,
+._button {
+    background: $link;
+    border-radius: 5px;
+    color: $white;
+    display: inline-block;
+    font-family: $altFont;
+    font-size: 18px;
+    font-weight: 700;
+    height: $base;
+    line-height: $base;
+    max-width: 300px;
+    padding: 0 40px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all $duration $easingLight;
+    letter-spacing: -1px;
+
+    &:hover{
+        background: $linkHover;
+        text-decoration: none;
+    }
+
+    &.-alt {
+        background: $green;
+
+        &:hover{
+            color: $darkGreen;
+        }
+    }
+
+    &.-large {
+        height: $base*1.5;
+        line-height: $base*1.5;
+        font-size: 24px;
+    }
+
+    &.-small {
+        height: $base*0.75;
+        line-height: $base*0.75;
+    }
+}
