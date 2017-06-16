@@ -1,5 +1,41 @@
 extends _layouts/base
 
 block content
-    h1 Hola Mundo
+    main.Home
+        section._hero
+            h1._stamp(title="Los Hermanos, Carnes de Calidad, De la granja a tu casa. Más Rico y más sano")
+                img(src="images/home/stamp.png")
+                
+            div._slider
+                each slide in site.data.home.heroSlider
+                    div
+                        ._img
+                            img.img-responsive(src=slide.img)
+                        ._text
+                            h2= slide.title
+                            p= slide.desc
+                            a._button.-alt
+                                | HACÉ TU PEDIDO
+                                span
+                                    i.fa.fa-arrow-right
+                        
+        section._promo
+            .container
+                .row
+                    h2.col-xs-24._main-title.-vertical-space Promoción
+                    div.col-xs-24._promo-items
+                        div.row
+                            each item in site.data.home.promo
+                                div.col-xs-12.col-sm-6
+                                    ._img
+                                        img(src=item.img)
+                                    p._name!= item.name
+                            div.col-xs-12.col-sm-6._total
+                                ._img
+                                    p._amount $2150
+                                a._button.-promo(href="#") Pedila Ahora
+                                p
+                                    i.fa.fa-truck
+                                    | Envío Gratis
+            
   

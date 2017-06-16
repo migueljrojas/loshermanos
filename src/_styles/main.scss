@@ -25,6 +25,7 @@
 body {
     font-family: $mainFont;
     font-weight: 400;
+    color:$text;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,6 +47,10 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+main {
+    background: $bg;
 }
 
 // Styling on warning for users on IE7 or below

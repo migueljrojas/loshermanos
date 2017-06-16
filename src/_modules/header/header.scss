@@ -1,1 +1,417 @@
-// header styles
+.Header {
+    position: fixed;
+    background: $bg;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    padding: 0;
+    top:0;
+    left:0;
+    right:0;
+    transition: all $duration $easing;
+    min-height: 50px;
+    z-index: 1000;
+    text-align: center;
+
+    & + main {
+        padding-top: 50px;
+        transition: padding-top $duration $easing;
+        @include breakpoint(md) {
+            padding-top: 80px;
+        }
+    }
+
+    @include breakpoint(md){
+        display: flex;
+        align-items: center;
+        min-height: 80px;
+    }
+
+    ._logo{
+        float: left;
+        position: absolute;
+        padding: 0;
+        left: 0;
+        top: 0;
+        border-right: 1px dotted $lightGray;
+        transition: all $duration $easing;
+        opacity: 0;
+
+        svg {
+            fill: $pink;
+            height: 50px;
+            width: 80px;
+            transition: all $duration $easing;
+
+            @include breakpoint(md){
+                height: 60px;
+            }
+        }
+
+        @include breakpoint(md){
+            border: none;
+            float: left;
+            opacity: 1;
+            top: 10px;
+            left:$base;
+        }
+
+        @include breakpoint(lg){
+            left:calc(50% - 560px);
+        }
+    }
+
+    .container {
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        position: relative;
+        transition: all $duration $easing;
+        margin-top: 50px;
+
+        @include breakpoint(md) {
+            height: auto;
+            overflow: visible;
+            opacity: 1;
+            margin-top: 0;
+        }
+    }
+
+    ._hamburguer{
+        border-left: 1px solid $lightestGray;
+        cursor: pointer;
+        height: 50px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 0;
+        width: 50px;
+        z-index: 10;
+        transition: all $duration $easing;
+
+        span{
+            background: $pink;
+            display: block;
+            height:1px;
+            left:0;
+            margin: 10px auto 0;
+            position: relative;
+            right:0;
+            transition: all .3s ease;
+            width:70%;
+            &:first-child{
+                margin-top: 13px;
+            }
+        }
+
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+
+    ._nav {
+        border-top: 1px solid $lightGray;
+        border-bottom: 1px solid $lightGray;
+        transition: all $duration $easing;
+
+        @include breakpoint(md) {
+            border:none;
+            padding-top: 0;
+        }
+    }
+
+    ._menu {
+
+        @include breakpoint(md){
+            display: flex;
+            justify-content: center;
+        }
+
+        & > li {
+            border-bottom: 1px dotted $midGray;
+            position: relative;
+            margin: 0 -15px;
+
+            @include breakpoint(md) {
+                border-bottom: none;
+                margin: 0 $base/2 0 0;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            & > a {
+                display: block;
+                font-size: 18px;
+                height: $base;
+                line-height: $base;
+                text-transform: capitalize;
+                background: $lightestGray;
+                transition: all $duration $easing;
+                font-family: $altFont;
+                text-transform: uppercase;
+                color:$darkestGray;
+
+                @include breakpoint(md) {
+                    display: inline-block;
+                    padding: 0 $base/6;
+                    font-size: 16px;
+                }
+
+                &:hover{
+                    background: $darkestGray;
+                    color:$white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    ._shop-cart{
+        position: absolute;
+        right:50px;
+        top:0;
+
+        & > a{
+            display: block;
+            width: 50px;
+            height:50px;
+            border-left: 1px dotted $lightGray;
+            text-align: center;
+            padding-right: 5px;
+            transition: all $duration $easing;
+
+            i{
+                font-size:28px;
+                line-height: 50px;
+                color: $darkestGray;
+                transition: all $duration $easing;
+            }
+
+            @include breakpoint(md){
+                position: relative;
+                border-right: 1px solid $darkestGray;
+                border-left: none;
+                height:80px;
+
+                i {
+                    line-height: 80px;
+                }
+            }
+        }
+
+        &.-open{
+
+            ._checkout {
+                display:block;
+                max-height: 100px;
+                padding: 10px 0 0;
+                overflow: visible;
+
+                p,a{
+                    opacity: 1;
+                }
+
+                @include breakpoint(md){
+                    padding: 5px 0 0;
+                }
+            }
+        }
+
+        @include breakpoint(md){
+            display: flex;
+            right:&base;
+            float: left;
+            top:50%;
+            transform: translateY(-50%);
+        }
+
+        @include breakpoint(lg){
+            right: calc(50% - 560px);
+        }
+    }
+
+    ._qty {
+        position: absolute;
+        border-radius: 50%;
+        height: 16px;
+        width:16px;
+        line-height: 16px;
+        font-size:11px;
+        text-align: center;
+        color:$white;
+        background: $pink;
+        top:25%;
+        right: 10px;
+    }
+
+    ._checkout {
+        max-height: 0;
+        overflow: hidden;
+        transition: all $duration $easing;
+        position: absolute;
+        width:160px;
+        transform: translateX(-50%);
+        background: $bgSecondary;
+        top:50px;
+        left:calc(50% - 5px);
+        text-transform: uppercase;
+        padding: 0;
+        font-size: 12px;
+
+        span{
+            font-family: $altFont;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        ._button{
+            width:100%;
+            @include breakpoint(md){
+                width: auto;
+            }
+        }
+
+        &:before{
+            content: '';
+            border-bottom: 10px solid $bgSecondary;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            position: absolute;
+            left:calc(50% - 5px);
+            top:-10px;
+
+            @include breakpoint(md){
+                display:none;
+            }
+        }
+
+        p,a{
+            opacity: 0;
+            transition: all $duration $easing;
+
+            @include breakpoint(md){
+                opacity: 1;
+            }
+        }
+
+        @include breakpoint(md){
+            max-height: none;
+            position: relative;
+            float: left;
+            top:0;
+            background: $bg;
+            padding-top: 5px;
+            left:80px;
+        }
+    }
+
+    &.-ontop{
+        min-height: 80px;
+
+        & + main {
+            padding-top: 80px;
+            @include breakpoint(md) {
+                padding-top: 180px;
+            }
+        }
+
+        @include breakpoint(md){
+            min-height: 180px;
+        }
+
+        ._logo{
+            padding: 10px 10px 5px;
+            opacity: 1;
+
+            svg{
+                height:58px;
+
+                @include breakpoint(md) {
+                    height: 150px;
+                    width:220px;
+                }
+            }
+
+            @include breakpoint(md) {
+                padding: 5px 0;
+            }
+        }
+
+        .container{
+            margin-top: 80px;
+
+            @include breakpoint(md) {
+                margin-top: 0;
+            }
+        }
+
+        ._nav {
+            @include breakpoint(md) {
+                padding-top: 30px;
+            }
+        }
+
+        ._shop-cart{
+            & > a{
+                height:80px;
+
+                i{
+                    line-height: 80px;
+                }
+            }
+        }
+
+        ._hamburguer{
+            height: 80px;
+            padding-top: 15px;
+        }
+
+        &.-open{
+            .container {
+                border-top: 1px solid $lightGray;
+                height: calc(100vh - 80px);
+                margin-top: 80px;
+                opacity: 1;
+            }
+        }
+
+        ._checkout {
+            top:80px;
+            @include breakpoint(md){
+                top:0;
+            }
+        }
+    }
+
+    &.-open{
+        background: $bg;
+        max-height: 100vh;
+
+        ._hamburguer{
+
+            span{
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:nth-child(1),
+                &:nth-child(3){
+                    position: absolute;
+                    top:30%;
+                    transform: rotate(45deg);
+                    width: 70%;
+                }
+                &:nth-child(3){
+                    top:35%;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        .container {
+            border-top: 1px solid $lightGray;
+            height: calc(100vh - 50px);
+            margin-top: 50px;
+            opacity: 1;
+        }
+    }
+}

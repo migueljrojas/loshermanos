@@ -1,0 +1,22 @@
+{
+    "menu":[ 
+        {
+            "name":"Hace tu pedido",
+            "url":"#"
+        },
+        {
+            "name":"Zona de Cobertura",
+            "url":"#"
+        },
+        {
+            "name":"Quienes Somos",
+            "url":"#"
+        }
+    ],
+    "shop":{
+        "tag":"Tu pedido",
+        "amount":"3232,00",
+        "btnTxt": "Ver carrito",
+        "btnLink": "#"
+    }
+}

@@ -4,9 +4,14 @@
 'use strict';
 
 global.$ = global.jQuery = require('jquery');
-//var Link = require('../_modules/link/link');
+var Header = require('../_modules/header/header');
+var Footer = require('../_modules/footer/footer');
+var Home = require('./home');
 
 $(function() {
-  //new Link(); // Activate Link modules logic
+    require('../../bower_components/slick-carousel/slick/slick');
+  new Header();
+  new Footer();
+  new Home();
   console.log('Welcome to Los Hermanos!');
 });

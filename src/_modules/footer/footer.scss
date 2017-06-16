@@ -1,1 +1,80 @@
-// footer styles
+.Footer{
+    ._delivery {
+        background: $bgSecondary;
+        color:$text;
+
+        h4 {
+            font-size: 28px;
+
+            @include breakpoint(md) {
+                font-size: 40px;
+            }
+        }
+    }
+
+    ._truck {
+        @include breakpoint(sm) {
+            padding-top: 20px;
+        }
+    }
+
+    ._map {
+        text-align: center;
+
+        h5 {
+            text-transform: uppercase;
+        }
+
+        a {
+            color:$text;
+            text-decoration: underline;
+        }
+
+        img {
+            margin: 10px auto;
+        }
+    }
+
+    ._data{
+        background: $darkGray;
+        text-align: center;
+        color:$white;
+
+        @include breakpoint(sm) {
+            text-align: left;
+
+            i {
+                margin-right: 5px;
+            }
+
+            p {
+                float: left;
+                padding: 0 10px;
+
+                &:first-of-type {
+                    border-right: 1px solid;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    ._logo {
+        display: inline-block;
+        svg {
+            fill: $white;
+            height: 80px;
+            max-width: 100%;
+        }
+    }
+
+    ._copy{
+        text-align: center;
+
+        @include breakpoint(sm) {
+            p {
+                line-height: 50px;
+            }
+        }
+    }
+}

@@ -1,2 +1,29 @@
-header._header
-    h2 soy el header
+header.Header.-ontop
+
+    ._hamburguer
+        span
+        span
+        span
+        
+    ._logo
+        | <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+        
+    .container
+        nav._nav.row
+            ul.col-xs-24.col-md-12.col-md-offset-6._menu
+                each item in site.data.header.menu
+                    li
+                        a(href=item.url)= item.name
+        
+    
+    ._shop-cart
+        a
+            span._qty 2
+            i.fa.fa-shopping-cart
+        ._checkout
+            p
+                | #{site.data.header.shop.tag}: 
+                span
+                    | $#{site.data.header.shop.amount}
+                
+            a._button.-small(href=site.data.header.shop.btnLink)= site.data.header.shop.btnTxt 

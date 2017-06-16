@@ -11,7 +11,7 @@ $darkGreen: #5e8a06;
 $yellow: #fff799;
 
 $link: $pink;
-$linkHover: darken($pink, .2);
+$linkHover: $pink - #333;
 $text: $darkGray;
 $textLight: $white;
 $textDark: $darkestGray;

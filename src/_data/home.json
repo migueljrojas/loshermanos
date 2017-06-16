@@ -1,0 +1,28 @@
+{
+    "heroSlider": [
+        {
+            "img": "../images/home/slide-1.jpg",
+            "title": "BONDIOLA",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg."
+        },
+        {
+            "img": "../images/home/slide-2.jpg",
+            "title": "Carre Entero",
+            "desc": "Es un corte muy rico ya que tiene una finas vetas de grasa que lo hace único en su sabor , ideal para compartir comidas con amigos y en familia."
+        }
+    ],
+    "promo": [
+        {
+            "name": "1kg de<br><strong>Milanesas</strong>",
+            "img": "../images/home/promo-1.jpg"
+        },
+        {
+            "name": "1 <strong>Solomillo</strong><br><span>_</span>",
+            "img": "../images/home/promo-2.jpg"
+        },
+        {
+            "name": "1 Carré de<br><strong>Cerdo Entero</strong>",
+            "img": "../images/home/promo-3.jpg"
+        }
+    ]
+}

@@ -2,7 +2,6 @@ a._button,
 button._button,
 ._button {
     background: $link;
-    border-radius: 5px;
     color: $white;
     display: inline-block;
     font-family: $altFont;
@@ -15,18 +14,18 @@ button._button,
     text-align: center;
     text-transform: uppercase;
     transition: all $duration $easingLight;
-    letter-spacing: -1px;
 
     &:hover{
         background: $linkHover;
         text-decoration: none;
+        color: $white;
     }
 
     &.-alt {
         background: $green;
 
         &:hover{
-            color: $darkGreen;
+            background: $darkGreen;
         }
     }
 
@@ -39,5 +38,17 @@ button._button,
     &.-small {
         height: $base*0.75;
         line-height: $base*0.75;
+        font-size: 16px;
+        padding: 0 $base/2;
+    }
+
+    &.-promo {
+        background: $bg;
+        color:$green;
+        box-shadow: 0 0 5px rgba(0,0,0,.3);
+
+        &:hover{
+            color:$darkGreen;
+        }
     }
 }
