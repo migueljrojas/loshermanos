@@ -1,0 +1,36 @@
+{
+    "title": "GRACIAS POR TU PEDIDO",
+    "desc": "En breve nos pondremos en contacto por teléfono para coordinar los detalles de la entrega.<br>Te dejamos a continuación una copia de tu pedido.",
+    "pedido": [
+        {
+            "img": "../images/success/item-1.jpg",
+            "name": "BONDIOLA",
+            "quantity": "2",
+            "total": "$183,00"
+        },
+        {
+            "img": "../images/success/item-2.jpg",
+            "name": "COSTELETA",
+            "quantity": "35",
+            "total": "$2747,50"
+        },
+        {
+            "img": "../images/success/item-3.jpg",
+            "name": "VACIO",
+            "quantity": "1",
+            "total": "$91,50"
+        },
+        {
+            "img": "../images/success/item-4.jpg",
+            "name": "MATAMBRITO",
+            "quantity": "2",
+            "total": "$183,00"
+        }
+    ],
+    "checkout": {
+        "pedido": "$3232,00",
+        "envio": "GRATIS",
+        "total": "$3232,00",
+        "payment": "A PAGAR CONTRA ENTREGA"
+    }
+}

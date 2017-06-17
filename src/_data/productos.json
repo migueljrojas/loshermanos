@@ -1,0 +1,68 @@
+{
+    "title": "¿QUÉ VAS A PEDIR HOY?",
+    "list": [
+        {
+            "img": "../images/products/product-1.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "BONDIOLA FRESCA",
+            "price": "91,50",
+            "piece": "3,5"
+        },
+        {
+            "img": "../images/products/product-2.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "COSTELETA",
+            "price": "78,50",
+            "piece": "1,5"
+        },
+        {
+            "img": "../images/products/product-3.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "SOLOMILLO",
+            "price": "105,00",
+            "piece": "1,5"
+        },
+        {
+            "img": "../images/products/product-4.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "ASADO",
+            "price": "91,50",
+            "piece": "3,5"
+        },
+        {
+            "img": "../images/products/product-5.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "VACIO",
+            "price": "78,50",
+            "piece": "1,5"
+        },
+        {
+            "img": "../images/products/product-6.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "MATAMBRITO",
+            "price": "105,00",
+            "piece": "1,5"
+        },
+        {
+            "img": "../images/products/product-1.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "BONDIOLA FRESCA",
+            "price": "91,50",
+            "piece": "3,5"
+        },
+        {
+            "img": "../images/products/product-2.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "COSTELETA",
+            "price": "78,50",
+            "piece": "1,5"
+        },
+        {
+            "img": "../images/products/product-3.jpg",
+            "desc": "Es ligeramente veteada la cual le da un sabor único especial para cocinarla en la parrilla, al horno o en estofados, su peso aproximado entera es de 2kg.",
+            "name": "SOLOMILLO",
+            "price": "105,00",
+            "piece": "1,5"
+        }
+    ]
+}

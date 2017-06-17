@@ -1,3 +1,147 @@
-.success {
-    
+.Success {
+
+    .fa-check {
+        color:$green;
+        font-size:36px;
+    }
+
+    ._title{
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    ._desc {
+        font-size:18px;
+        margin: 0;
+    }
+
+    ._items-pedido {
+        li{
+            padding: $base/4 0;
+            clear: both;
+            border-bottom: 1px solid $lightGray;
+            min-height: 90px;
+        }
+
+        ._item {
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            float: left;
+            justify-content: space-between;
+        }
+
+        ._img{
+            width:70px;
+            height:70px;
+            background: $lightestGray;
+            border:3px solid $lightestGray;
+            float: left;
+            margin-right: $base/4;
+            overflow: hidden;
+            position: relative;
+
+            img{
+                position: absolute;
+                height: 100%;
+                width: auto;
+                left:50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        ._name {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        ._qty {
+            padding: 5px;
+            font-family: $altFont;
+            background: $lightestGray;
+            flex-basis: auto;
+            width: auto;
+            min-width: 36px;
+            align-self: flex-start;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        ._total {
+            float: right;
+            font-family: $altFont;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 70px;
+            color:$midGray;
+            font-size: 18px;
+        }
+    }
+
+    ._checkout {
+        background: $text;
+        color: $textLight;
+        padding: $base/4;
+        min-height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+
+        & > div {
+            flex-basis: 50%;
+
+            @include breakpoint(sm) {
+                flex-basis: 25%;
+            }
+        }
+
+        dl{
+            margin: 5px 0;
+
+            @include breakpoint(sm) {
+                clear: left;
+                display: flex;
+                justify-content: center;
+
+                dt, dd{
+                    float: left;
+                    margin-right: 7px;
+                    line-height: 50px;
+                }
+            }
+        }
+
+        dt {
+            text-transform: uppercase;
+        }
+
+        dd {
+            font-family: $altFont;
+            font-size: 18px;
+        }
+
+        ._total {
+            dd {
+                color: $link;
+            }
+
+            @include breakpoint(sm) {
+                border-left: 1px solid;
+                border-right: 1px solid;
+            }
+        }
+
+        ._payment {
+            @include breakpoint(sm) {
+
+                span{
+                    padding-left: $base/2;
+                    display: block;
+                }
+            }
+        }
+    }
 }

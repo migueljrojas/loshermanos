@@ -13158,6 +13158,77 @@ module.exports = Header;
 
 },{}],5:[function(require,module,exports){
 'use strict';
+
+// Constructor
+var Product = function() {
+
+    var products = $('._product');
+
+    products.each( function(){
+        var calc = $(this).find('._calculator');
+        var minus = $(this).find('._minus');
+        var plus = $(this).find('._plus');
+        var quantityField = $(this).find('._unit');
+        var quantity = quantityField.val();
+        var quantity = parseFloat(quantity);
+        var amountField = $(this).find('._amount');
+        var amount = amountField.val();
+        var price = $(this).find('._price').data('price');
+        var price = parseFloat(price).toFixed(2);
+        var trigger = $(this).find('._desc-trigger');
+        var caption = $(this).find('._caption');
+        var triggerDisplace = caption.height() + 24;
+        var open = false;
+        console.log(triggerDisplace);
+
+        trigger.click(function(){
+            caption.toggleClass('-open');
+
+            if ( !open ) {
+                $(this).css('transform', 'translateY(-' + triggerDisplace + 'px) rotate(-45deg)');
+            } else {
+                $(this).css('transform', 'translateY(0) rotate(0)');
+            }
+
+            open = !open;
+        });
+
+        minus.click(function(){
+            if ( quantity > 0 ) {
+                quantity = quantity - 1;
+                quantityField.val(quantity);
+                quantityField.trigger('change');
+            } else {
+                return false;
+            }
+        });
+
+        plus.click(function(){
+            if ( quantity < 10 ) {
+                quantity = quantity + 1;
+                quantityField.val(quantity);
+                quantityField.trigger('change');
+            } else {
+                return false;
+            }
+        });
+
+        quantityField.change(function(){
+            amount = price * quantity;
+            amount = parseFloat(amount)
+                     .toFixed(2)
+                     .toString()
+                     .replace('.', ',');
+            amount = '$' + amount;
+            amountField.val(amount)
+        });
+    });
+};
+
+module.exports = Product;
+
+},{}],6:[function(require,module,exports){
+'use strict';
 // Constructor
 var Home = function() {
     $('._slider').slick();
@@ -13165,7 +13236,7 @@ var Home = function() {
 
 module.exports = Home;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function (global){
 // Main javascript entry point
 // Should handle bootstrapping/starting application
@@ -13176,17 +13247,19 @@ global.$ = global.jQuery = require('jquery');
 var Header = require('../_modules/header/header');
 var Footer = require('../_modules/footer/footer');
 var Home = require('./home');
+var Product = require('../_modules/product/product');
 
 $(function() {
     require('../../bower_components/slick-carousel/slick/slick');
-  new Header();
-  new Footer();
-  new Home();
-  console.log('Welcome to Los Hermanos!');
+    new Header();
+    new Footer();
+    new Home();
+    new Product();
+    console.log('Welcome to Los Hermanos!');
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../../bower_components/slick-carousel/slick/slick":1,"../_modules/footer/footer":3,"../_modules/header/header":4,"./home":5,"jquery":2}]},{},[6])
+},{"../../bower_components/slick-carousel/slick/slick":1,"../_modules/footer/footer":3,"../_modules/header/header":4,"../_modules/product/product":5,"./home":6,"jquery":2}]},{},[7])
 
 //# sourceMappingURL=main.js.map

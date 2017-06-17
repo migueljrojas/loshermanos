@@ -5,4 +5,39 @@ block config
   - var baseUrl = '../'
 
 block content
-  p success page
+    main.Success
+        .container.-vertical-space
+            .row
+                .col-xs-3.col-sm-2.col-md-1
+                    i.fa.fa-check
+                .col-xs-21.col-sm-22.col-md-23
+                    h1._title= site.data.success.title
+                    p._desc!= site.data.success.desc
+                .col-xs-24.col-md-18.col-md-offset-1.col-lg-15.col-lg-offset-1.vertical-space
+                    ul._items-pedido.-vertical-space-top
+                        each item in site.data.success.pedido
+                            li
+                                ._img
+                                    img(src=item.img)
+                                ._item
+                                    h6._name= item.name
+                                    span._qty= item.quantity
+                                ._total
+                                    span= item.total
+                    
+                    ._checkout
+                        ._pedido
+                            dl
+                                dt Tu pedido
+                                dd= site.data.success.checkout.pedido
+                        ._envio
+                            dl
+                                dt Envío*
+                                dd= site.data.success.checkout.envio
+                        ._total
+                            dl
+                                dt Total
+                                dd= site.data.success.checkout.total
+                        ._payment
+                            span= site.data.success.checkout.payment
+                    

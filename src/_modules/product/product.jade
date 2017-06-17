@@ -1,6 +1,24 @@
-mixin product(spec)
-  - spec = spec || {}
-  - spec.__class = spec.__class || ''
+mixin product(item)
+    ._product
+        a._desc-trigger
+            span
+            span
+        ._img
+            img(src=item.img)
+            ._caption
+                p= item.desc
+        ._info
+            h6._name= item.name
+            span._price(data-price=item.price)
+              | $<span class="_value">#{item.price}</span> / KG 
+            span._piece
+              | (#{item.piece} KG c/u)
+        ._calculator
+            ._controls
+                a._minus
+                input._unit(value="0", readonly)
+                a._plus
+            ._total
+                span Tu pedido:
 
-  div(class=spec.__class)&attributes(attributes)
-    p This is an example paragraph for the product module
+                input._amount(value="$0", readonly)
