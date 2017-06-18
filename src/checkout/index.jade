@@ -12,49 +12,55 @@ block content
             .row
                 .col-xs-24
                     h1._title Completá tu pedido
-                .col-xs-24.-vertical-space
-                    .row
+                .col-xs-24
+                    .row.-vertical-space
                         .col-xs-24.col-md-15
-                            form._form
-                                ._form-group.row
+                            form._form.row
+                                ._form-group.col-xs-24
                                     label Tus datos
-                                    input.col-xs-24.col-sm-11(type="text", name="nombre", placeholder="Nombre")
-                                    input.col-xs-24.col-sm-11.col-sm-offset-1(type="text", name="apellido", placeholder="Apellido")
-                                    input.col-xs-24.col-sm-11(type="number", name="telefono", placeholder="Teléfono")
-                                    input.col-xs-24.col-sm-11.col-sm-offset-1(type="email", name="email", placeholder="Email")
-                                ._form-group.row
+                                    .row
+                                        .col-xs-24.col-sm-11
+                                            input(type="text", name="nombre", placeholder="Nombre")
+                                        .col-xs-24.col-sm-11.col-sm-offset-1
+                                            input(type="text", name="apellido", placeholder="Apellido")
+                                        .col-xs-24.col-sm-11
+                                            input(type="number", name="telefono", placeholder="Teléfono")
+                                        .col-xs-24.col-sm-11.col-sm-offset-1
+                                            input(type="email", name="email", placeholder="Email")
+                                ._form-group.col-xs-24
                                     label Lugar de entrega
-                                    select.col-xs-24.col-sm-11(type="text", name="nombre", placeholder="Seleccioná el country")
-                                        each country, index in site.data.checkout.countries
-                                            option(value=country)
-                                    input.col-xs-24.col-sm-11.col-sm-offset-1(type="text", name="casa")
+                                    .row
+                                        .col-xs-24.col-sm-11
+                                            select(type="text", name="nombre", placeholder="Seleccioná el country")
+                                                each country, index in site.data.checkout.countries
+                                                    option(value=country)
+                                        .col-xs-24.col-sm-11.col-sm-offset-1
+                                            input(type="text", name="casa")
                                     label.-small Aclaraciones / Detalles
-                                    textarea.col-xs-23(rows="5", name="mensaje")
-                                    label.-small
-                                        | *Si tu country no figura en el listado o vivís en otro lugar y querés recibir nuestros productos, por favor escribinos a 
-                                        a(href="mailto:info@loshermanos.com.ar") info@loshermanos.com.ar
-                                ._form-group.row
+                                    .row
+                                        .col-xs-24.col-sm-23
+                                            textarea(rows="5", name="mensaje")
+                                            label.-small
+                                            | *Si tu country no figura en el listado o vivís en otro lugar y querés recibir nuestros productos, por favor escribinos a 
+                                            a(href="mailto:info@loshermanos.com.ar") info@loshermanos.com.ar
+                                ._form-group.col-xs-24
                                     label Día y hora de entrega
-                                    input.col-xs-24.col-sm-11(type="date", name="entrega")
-                                    input.col-xs-24.col-sm-11.col-sm-offset-1(type="text", name="horario", value="Hora: Entre las 9 y las 12hs", readonly)
-                                ._form-group.row
+                                    .row
+                                        .col-xs-24.col-sm-11
+                                            input(type="date", name="entrega")
+                                        .col-xs-24.col-sm-11.col-sm-offset-1
+                                            input(type="text", name="horario", value="Hora: Entre las 9 y las 12hs", readonly)
+                                ._form-group.col-xs-24
                                     label Forma de Pago
-                                    ._radio
-                                        input(type="radio", id="payment-1", name="forma-de-pago")
-                                        label(for="payment-1")
-                                            img(src="../images/efectivo.jpg")
-                                    ._radio
-                                        input(type="radio", id="payment-2", name="forma-de-pago")
-                                        label(for="payment-2")
-                                            img(src="../images/mercadopago.jpg")
-
-
-                                    <div>
-                                     <input type="radio" id="radio02" name="radio" />
-                                     <label for="radio02"><span></span>Radio Button 2</label>
-                                    </div>
+                                    .row
+                                        ._radio.col-xs-24.col-sm-9.-cash
+                                            input(type="radio", id="payment-1", name="forma-de-pago")
+                                            label(for="payment-1")
+                                                img.img-responsive(src="../images/efectivo.jpg")
+                                        ._radio.col-xs-24.col-sm-11.col-sm-offset-2.-mp
+                                            input(type="radio", id="payment-2", name="forma-de-pago")
+                                            label(for="payment-2")
+                                                img.img-responsive(src="../images/mercadopago.jpg")
                                     
-                                
-                                    
-                        .col-xs-24.col-md-6.col-md-offset-3._shopcart-col
-                            +shopcart
+                        .col-xs-24.col-md-7.col-md-offset-2._shopcart-col
+                            +shopcart("final")

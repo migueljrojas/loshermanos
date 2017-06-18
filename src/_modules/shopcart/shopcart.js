@@ -8,7 +8,6 @@ var Shopcart = function() {
 
     trigger.click(function(){
         shopCart.toggleClass('-open');
-        $('body').toggleClass('-hideOverflow');
     });
 
     $(window).on("scroll", function() {
@@ -22,11 +21,11 @@ var Shopcart = function() {
     	    shopCart.removeClass('-bottom');
     	}
 
-        if ( scroll <= 120 ) {
+        if ( scroll <= 90 ) {
             shopCart.removeClass('-fixed');
         }
 
-        if ( shopCartTop <= 110 ) {
+        if ( shopCartTop <= 120 ) {
             shopCart.addClass('-fixed');
         }
     });

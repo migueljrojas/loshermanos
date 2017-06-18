@@ -15,11 +15,11 @@ block content
                     h1._title= site.data.productos.title
                 .col-xs-24.-vertical-space
                     .row
-                        .col-xs-24.col-md-18
+                        .col-xs-24.col-md-17
                             ul.row._product-list
                                 each item in site.data.productos.list
                                     li.col-xs-24.col-sm-12.col-md-8._item
                                         +product(item)                                            
                                     
-                        .col-xs-24.col-md-6
-                            +shopcart
+                        .col-xs-24.col-md-7
+                            +shopcart(null)

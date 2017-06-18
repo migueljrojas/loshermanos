@@ -41,42 +41,78 @@
         <div class="col-xs-24">
           <h1 class="_title">Completá tu pedido</h1>
         </div>
-        <div class="col-xs-24 -vertical-space">
-          <div class="row">
+        <div class="col-xs-24">
+          <div class="row -vertical-space">
             <div class="col-xs-24 col-md-15">
-              <form class="_form">
-                <div class="_form-group row">
+              <form class="_form row">
+                <div class="_form-group col-xs-24">
                   <label>Tus datos</label>
-                  <input type="text" name="nombre" placeholder="Nombre" class="col-xs-24 col-sm-11">
-                  <input type="text" name="apellido" placeholder="Apellido" class="col-xs-24 col-sm-11 col-sm-offset-1">
-                  <input type="number" name="telefono" placeholder="Teléfono" class="col-xs-24 col-sm-11">
-                  <input type="email" name="email" placeholder="Email" class="col-xs-24 col-sm-11 col-sm-offset-1">
+                  <div class="row">
+                    <div class="col-xs-24 col-sm-11">
+                      <input type="text" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="col-xs-24 col-sm-11 col-sm-offset-1">
+                      <input type="text" name="apellido" placeholder="Apellido">
+                    </div>
+                    <div class="col-xs-24 col-sm-11">
+                      <input type="number" name="telefono" placeholder="Teléfono">
+                    </div>
+                    <div class="col-xs-24 col-sm-11 col-sm-offset-1">
+                      <input type="email" name="email" placeholder="Email">
+                    </div>
+                  </div>
                 </div>
-                <div class="_form-group row">
+                <div class="_form-group col-xs-24">
                   <label>Lugar de entrega</label>
-                  <select type="text" name="nombre" placeholder="Seleccioná el country" class="col-xs-24 col-sm-11">
-                    <option value="Country 1"></option>
-                    <option value="Country 2"></option>
-                    <option value="Country 3"></option>
-                    <option value="Country 4"></option>
-                    <option value="Country 5"></option>
-                  </select>
-                  <input type="text" name="casa" class="col-xs-24 col-sm-11 col-sm-offset-1">
+                  <div class="row">
+                    <div class="col-xs-24 col-sm-11">
+                      <select type="text" name="nombre" placeholder="Seleccioná el country">
+                        <option value="Country 1"></option>
+                        <option value="Country 2"></option>
+                        <option value="Country 3"></option>
+                        <option value="Country 4"></option>
+                        <option value="Country 5"></option>
+                      </select>
+                    </div>
+                    <div class="col-xs-24 col-sm-11 col-sm-offset-1">
+                      <input type="text" name="casa">
+                    </div>
+                  </div>
                   <label class="-small">Aclaraciones / Detalles</label>
-                  <textarea rows="5" name="mensaje" class="col-xs-23"></textarea>
-                  <label class="-small">*Si tu country no figura en el listado o vivís en otro lugar y querés recibir nuestros productos, por favor escribinos a <a href="mailto:info@loshermanos.com.ar">info@loshermanos.com.ar</a></label>
+                  <div class="row">
+                    <div class="col-xs-24 col-sm-23">
+                      <textarea rows="5" name="mensaje"></textarea>
+                      <label class="-small"></label>*Si tu country no figura en el listado o vivís en otro lugar y querés recibir nuestros productos, por favor escribinos a <a href="mailto:info@loshermanos.com.ar">info@loshermanos.com.ar</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="_form-group row">
+                <div class="_form-group col-xs-24">
                   <label>Día y hora de entrega</label>
-                  <input type="date" name="entrega" class="col-xs-24 col-sm-11">
-                  <input type="text" name="horario" value="Hora: Entre las 9 y las 12hs" readonly class="col-xs-24 col-sm-11 col-sm-offset-1">
+                  <div class="row">
+                    <div class="col-xs-24 col-sm-11">
+                      <input type="date" name="entrega">
+                    </div>
+                    <div class="col-xs-24 col-sm-11 col-sm-offset-1">
+                      <input type="text" name="horario" value="Hora: Entre las 9 y las 12hs" readonly>
+                    </div>
+                  </div>
                 </div>
-                <div class="_form-group row">
+                <div class="_form-group col-xs-24">
                   <label>Forma de Pago</label>
+                  <div class="row">
+                    <div class="_radio col-xs-24 col-sm-9 -cash">
+                      <input type="radio" id="payment-1" name="forma-de-pago">
+                      <label for="payment-1"><img src="../images/efectivo.jpg" class="img-responsive"></label>
+                    </div>
+                    <div class="_radio col-xs-24 col-sm-11 col-sm-offset-2 -mp">
+                      <input type="radio" id="payment-2" name="forma-de-pago">
+                      <label for="payment-2"><img src="../images/mercadopago.jpg" class="img-responsive"></label>
+                    </div>
+                  </div>
                 </div>
               </form>
             </div>
-            <div class="col-xs-24 col-md-6 col-md-offset-3 _shopcart-col">
+            <div class="col-xs-24 col-md-7 col-md-offset-2 _shopcart-col">
               <div class="_shopcart">
                 <section class="_header"><a class="_title"><i class="fa fa-shopping-cart"> </i>Mi carrito</a></section>
                 <div class="_body">

@@ -38,13 +38,13 @@
 
     ._header {
         border-top: 3px solid $lightGray;
-        border-left: 3px solid $lightGray;
-        border-right: 3px solid $lightGray;
         border-bottom: 1px solid $lightGray;
         background: $bg;
 
         @include breakpoint(md){
             pointer-events: none;
+            border-left: 3px solid $lightGray;
+            border-right: 3px solid $lightGray;
         }
 
         a {
@@ -99,14 +99,14 @@
     }
 
     ._items {
-        border-left: 3px solid $lightGray;
-        border-right: 3px solid $lightGray;
         padding-bottom: 0;
         overflow-y: auto;
-        max-height: 300px;
+        max-height: 200px;
 
         @include breakpoint(md){
             max-height: 180px;
+            border-left: 3px solid $lightGray;
+            border-right: 3px solid $lightGray;
         }
 
         @include breakpoint(lg){
@@ -225,14 +225,14 @@
     &.-fixed {
         @include breakpoint(md){
             position: fixed;
-            top:111px;
-            width:212.5px;
+            top:121px;
+            width:253px;
             right: calc(50% - 470px);
         }
 
         @include breakpoint(lg){
-            width:262.5px;
-            right: calc(50% - 570px);
+            width:312px;
+            right: calc(50% - 571px);
         }
     }
 }

@@ -1,9 +1,15 @@
 .Checkout {
-    h1._title {
-        margin-left: -15px;
-    }
 
     ._shopcart-col {
         padding-top: 25px;
+    }
+
+    ._radio {
+        img{
+            height: 80px;
+        }
+        label {
+            float: left;
+        }
     }
 }
