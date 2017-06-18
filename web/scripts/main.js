@@ -13254,25 +13254,28 @@ var Shopcart = function() {
         shopCart.toggleClass('-open');
     });
 
-    $(window).on("scroll", function() {
-        var scroll = $(window).scrollTop();
-        var shopCartTop = shopCart.get(0).getBoundingClientRect().top;
-        var shopCartBottom = $('footer').get(0).getBoundingClientRect().top;
+    if (shopCart) {
 
-        if (shopCartBottom <= 750) {
-    	    shopCart.addClass('-bottom');
-    	} else {
-    	    shopCart.removeClass('-bottom');
-    	}
+        $(window).on("scroll", function() {
+            var scroll = $(window).scrollTop();
+            var shopCartTop = shopCart.get(0).getBoundingClientRect().top;
+            var shopCartBottom = $('footer').get(0).getBoundingClientRect().top;
 
-        if ( scroll <= 90 ) {
-            shopCart.removeClass('-fixed');
-        }
+            if (shopCartBottom <= 750) {
+                shopCart.addClass('-bottom');
+            } else {
+                shopCart.removeClass('-bottom');
+            }
 
-        if ( shopCartTop <= 120 ) {
-            shopCart.addClass('-fixed');
-        }
-    });
+            if ( scroll <= 90 ) {
+                shopCart.removeClass('-fixed');
+            }
+
+            if ( shopCartTop <= 120 ) {
+                shopCart.addClass('-fixed');
+            }
+        });
+    }
 };
 
 module.exports = Shopcart;
