@@ -35,7 +35,128 @@
       </div>
     </div>
   </header>
-  <p>checkout page</p>
+  <main class="Checkout">
+    <div class="container -vertical-space">
+      <div class="row">
+        <div class="col-xs-24">
+          <h1 class="_title">Completá tu pedido</h1>
+        </div>
+        <div class="col-xs-24 -vertical-space">
+          <div class="row">
+            <div class="col-xs-24 col-md-15">
+              <form class="_form">
+                <div class="_form-group row">
+                  <label>Tus datos</label>
+                  <input type="text" name="nombre" placeholder="Nombre" class="col-xs-24 col-sm-11">
+                  <input type="text" name="apellido" placeholder="Apellido" class="col-xs-24 col-sm-11 col-sm-offset-1">
+                  <input type="number" name="telefono" placeholder="Teléfono" class="col-xs-24 col-sm-11">
+                  <input type="email" name="email" placeholder="Email" class="col-xs-24 col-sm-11 col-sm-offset-1">
+                </div>
+                <div class="_form-group row">
+                  <label>Lugar de entrega</label>
+                  <select type="text" name="nombre" placeholder="Seleccioná el country" class="col-xs-24 col-sm-11">
+                    <option value="Country 1"></option>
+                    <option value="Country 2"></option>
+                    <option value="Country 3"></option>
+                    <option value="Country 4"></option>
+                    <option value="Country 5"></option>
+                  </select>
+                  <input type="text" name="casa" class="col-xs-24 col-sm-11 col-sm-offset-1">
+                  <label class="-small">Aclaraciones / Detalles</label>
+                  <textarea rows="5" name="mensaje" class="col-xs-23"></textarea>
+                  <label class="-small">*Si tu country no figura en el listado o vivís en otro lugar y querés recibir nuestros productos, por favor escribinos a <a href="mailto:info@loshermanos.com.ar">info@loshermanos.com.ar</a></label>
+                </div>
+                <div class="_form-group row">
+                  <label>Día y hora de entrega</label>
+                  <input type="date" name="entrega" class="col-xs-24 col-sm-11">
+                  <input type="text" name="horario" value="Hora: Entre las 9 y las 12hs" readonly class="col-xs-24 col-sm-11 col-sm-offset-1">
+                </div>
+                <div class="_form-group row">
+                  <label>Forma de Pago</label>
+                </div>
+              </form>
+            </div>
+            <div class="col-xs-24 col-md-6 col-md-offset-3 _shopcart-col">
+              <div class="_shopcart">
+                <section class="_header"><a class="_title"><i class="fa fa-shopping-cart"> </i>Mi carrito</a></section>
+                <div class="_body">
+                  <section class="_items">
+                    <form>
+                      <ul class="_item-list">
+                        <li>
+                          <h6 class="_name">Bondiola</h6>
+                          <div class="_calculator">
+                            <input type="hidden" value="91.50" class="_itemPrice"/>
+                            <div class="_controls"><a class="_minus"></a>
+                              <input value="0" readonly="readonly" class="_unit"/><a class="_plus"></a>
+                            </div>
+                            <div class="_total"><span>Tu pedido:</span>
+                              <input value="$0" readonly="readonly" class="_amount"/>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <h6 class="_name">Costeleta</h6>
+                          <div class="_calculator">
+                            <input type="hidden" value="78.50" class="_itemPrice"/>
+                            <div class="_controls"><a class="_minus"></a>
+                              <input value="0" readonly="readonly" class="_unit"/><a class="_plus"></a>
+                            </div>
+                            <div class="_total"><span>Tu pedido:</span>
+                              <input value="$0" readonly="readonly" class="_amount"/>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <h6 class="_name">Vacio</h6>
+                          <div class="_calculator">
+                            <input type="hidden" value="78.50" class="_itemPrice"/>
+                            <div class="_controls"><a class="_minus"></a>
+                              <input value="0" readonly="readonly" class="_unit"/><a class="_plus"></a>
+                            </div>
+                            <div class="_total"><span>Tu pedido:</span>
+                              <input value="$0" readonly="readonly" class="_amount"/>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <h6 class="_name">Matambrito</h6>
+                          <div class="_calculator">
+                            <input type="hidden" value="105.00" class="_itemPrice"/>
+                            <div class="_controls"><a class="_minus"></a>
+                              <input value="0" readonly="readonly" class="_unit"/><a class="_plus"></a>
+                            </div>
+                            <div class="_total"><span>Tu pedido:</span>
+                              <input value="$0" readonly="readonly" class="_amount"/>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </section>
+                  <section class="_checkout">
+                    <div class="_pedido"><span class="_tag">Tu Pedido</span>
+                      <input readonly="readonly" value="$0"/>
+                    </div>
+                    <div class="_envio"><span class="_tag">Envío*</span>
+                      <input readonly="readonly" value="GRATIS"/>
+                    </div>
+                    <div class="_total"><span class="_tag">Total</span>
+                      <input readonly="readonly" value="$0"/>
+                    </div>
+                    <div class="_observaciones">
+                      <p class="small">El pedido mínimo es de 6kg.<br>*A partir de 8kg. el envío es gratis.</p><!-- Solo para mostrar el captcha, eliminar luego -->
+                      <div class="GIF-no-usar"><img src="../images/nocaptcha.gif"/></div>
+                    </div><a class="_button -CTA">Realizar Pedido</a>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   <footer class="Footer">
     <section class="_delivery -vertical-space">
       <div class="container">

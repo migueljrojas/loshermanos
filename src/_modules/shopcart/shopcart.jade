@@ -1,6 +1,37 @@
-mixin shopcart(spec)
-  - spec = spec || {}
-  - spec.__class = spec.__class || ''
+include ../calculator/calculator
 
-  div(class=spec.__class)&attributes(attributes)
-    p This is an example paragraph for the shopcart module
+mixin shopcart(mode)
+    
+    ._shopcart
+        section._header
+            a._title
+                i.fa.fa-shopping-cart 
+                | Mi carrito
+        ._body
+            section._items
+                form
+                    ul._item-list
+                        each item in site.data.shopcart.list
+                            li
+                                h6._name= item.name
+                                +calculator(item.price)
+            section._checkout
+                ._pedido
+                    span._tag Tu Pedido
+                    input(readonly, value="$0")
+                ._envio
+                    span._tag Envío*
+                    input(readonly, value="GRATIS")
+                ._total
+                    span._tag Total
+                    input(readonly, value="$0")
+                ._observaciones
+                    p.small
+                        | El pedido mínimo es de 6kg.<br>*A partir de 8kg. el envío es gratis.
+                        
+                    if (mode == final)
+                        | <!-- Solo para mostrar el captcha, eliminar luego -->
+                        .GIF-no-usar
+                            img(src="../images/nocaptcha.gif")
+                        
+                a._button.-CTA Realizar Pedido

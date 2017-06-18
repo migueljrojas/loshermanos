@@ -1,28 +1,52 @@
 ._form{
     input,
-    textarea{
+    textarea,
+    select{
         outline:none;
         background: $lightGray;
-        border-radius:5px;
-        width:100%;
+        border-radius:0;
+        border: none;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 400;
         padding: $base/4;
         color:$darkGray;
-        margin-bottom: $base/4;
+        margin-bottom: $base/2;
+        transition: all $duration $easing;
 
         &:last-child{
             margin-bottom: 0;
+        }
+
+        &:focus {
+            background: $yellow;
+        }
+
+        &[readonly] {
+            background: $bg;
         }
     }
 
     label{
         color:$darkGray;
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        clear: both;
+
+        &.-small{
+            font-size: 14px;
+            padding-left: $base/4;
+        }
     }
 
     ::placeholder{
-        opacity:.3;
+        opacity:.7;
     }
+
+    ._form-group{
+        margin-bottom: $base/2;
+    }
+
     ._submit{
         color:#fff;
         background: $link;
@@ -32,5 +56,40 @@
         &:hover{
             background: $linkHover;
         }
+    }
+
+
+    input[type="radio"] {
+        display:none;
+    }
+    input[type="radio"] + label {
+        font-family:Arial, sans-serif;
+        font-size:14px;
+    }
+    input[type="radio"] + label span {
+        display:inline-block;
+        width:19px;
+        height:19px;
+        margin:-1px 4px 0 0;
+        vertical-align:middle;
+        cursor:pointer;
+        -moz-border-radius:  50%;
+        border-radius:  50%;
+    }
+
+    input[type="radio"] + label span {
+         background-color:red;
+    }
+
+    input[type="radio"]:checked + label span{
+         background-color:orange;
+    }
+
+    input[type="radio"] + label span,
+    input[type="radio"]:checked + label span {
+      -webkit-transition:background-color 0.4s linear;
+      -o-transition:background-color 0.4s linear;
+      -moz-transition:background-color 0.4s linear;
+      transition:background-color 0.4s linear;
     }
 }

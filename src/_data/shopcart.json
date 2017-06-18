@@ -1,0 +1,20 @@
+{
+    "list": [
+        {
+            "name": "Bondiola",
+            "price": "91.50"
+        },
+        {
+            "name": "Costeleta",
+            "price": "78.50"
+        },
+        {
+            "name": "Vacio",
+            "price": "78.50"
+        },
+        {
+            "name": "Matambrito",
+            "price": "105.00"
+        }
+    ]
+}

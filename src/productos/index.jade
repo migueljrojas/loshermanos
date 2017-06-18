@@ -1,6 +1,7 @@
 extends ../_layouts/base
 
 include ../_modules/product/product
+include ../_modules/shopcart/shopcart
 
 block config
   //- Correct base url pathing for this page
@@ -18,7 +19,7 @@ block content
                             ul.row._product-list
                                 each item in site.data.productos.list
                                     li.col-xs-24.col-sm-12.col-md-8._item
-                                        +product(item)
-                                            
+                                        +product(item)                                            
                                     
-                        .col-xs-24.col-md-6._shopcart
+                        .col-xs-24.col-md-6
+                            +shopcart

@@ -5,7 +5,7 @@
         background: $pink;
         width: 32px;
         height: 32px;
-        border: 3px solid $lightestGray;
+        border: 3px solid $lightGray;
         z-index: 5;
         left: 0;
         right: 0;
@@ -54,7 +54,7 @@
         height: 0;
         width: 100%;
         padding-bottom: 100%;
-        border: 3px solid $lightestGray;
+        border: 3px solid $lightGray;
 
         ._caption {
             padding: $base/4;
@@ -85,7 +85,7 @@
 
     ._info {
         padding: $base/4 0;
-        border-bottom: 1px solid $lightestGray;
+        border-bottom: 1px solid $lightGray;
 
         ._name {
             font-size: 16px;
@@ -99,97 +99,6 @@
 
         ._piece{
             font-size:12px;
-        }
-    }
-
-    ._calculator {
-        padding: $base/4 0;
-        display: flex;
-
-        input {
-            width:auto;
-            border:none;
-            font-family: $altFont;
-        }
-
-        ._controls{
-            display: flex;
-
-            input {
-                float: left;
-                width:24px;
-                text-align: center;
-                line-height: 24px;
-                height: 24px;
-                font-size: 21px;
-            }
-        }
-
-        ._total {
-            display: flex;
-            padding-left: $base/4;
-            text-align: right;
-            justify-content: space-between;
-            flex-grow: 1;
-
-            span {
-                font-size: 11px;
-                line-height: 24px;
-                flex-basis: 40%;
-                white-space: nowrap;
-            }
-
-            input {
-                text-align: right;
-                flex-basis: 60%;
-                line-height: 24px;
-                height: 24px;
-                font-size: 18px;
-                color:$midGray;
-                max-width: 70px;
-                position: relative;
-
-                &:before{
-                    content: '$';
-                    display: inline-block;
-                    background: red;
-                    width:20px;
-                    height:20px;
-                    position: absolute;
-                    left:0;
-                    z-index: 5;
-                }
-            }
-        }
-
-        a {
-            width: 24px;
-            height: 24px;
-            position: relative;
-            background: $bgSecondary;
-            display: block;
-            cursor: pointer;
-
-            &:before,
-            &:after {
-                content: '';
-                position: absolute;
-                width:16px;
-                left:4px;
-                top:50%;
-                height: 2px;
-                background: $green;
-            }
-
-            &:after {
-                transform: rotate(-90deg);
-            }
-
-            &._minus {
-                &:after {
-                    display: none;
-                }
-            }
         }
     }
 }

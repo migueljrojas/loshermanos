@@ -14,6 +14,7 @@ button._button,
     text-align: center;
     text-transform: uppercase;
     transition: all $duration $easingLight;
+    cursor: pointer;
 
     &:hover{
         background: $linkHover;

@@ -13118,54 +13118,12 @@ return jQuery;
 'use strict';
 
 // Constructor
-var Footer = function() {
-  this.name = 'footer';
-  console.log('%s module', this.name.toLowerCase());
-};
+var Calculator = function() {
 
-module.exports = Footer;
+    var calculators = $('._calculator');
 
-},{}],4:[function(require,module,exports){
-'use strict';
-// Constructor
-var Header = function() {
-    var header = $('.Header');
-    var shopCart = $('._shop-cart');
+    calculators.each( function(){
 
-    $('._hamburguer').on('click', function(){
-        header.toggleClass('-open');
-        $('body').toggleClass('-hideOverflow');
-    });
-
-    shopCart.on('click', function(){
-        $(this).toggleClass('-open');
-    });
-
-    $(function() {
-        $(window).scroll(function() {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 100) {
-                header.removeClass('-ontop');
-            } else {
-                header.addClass('-ontop');
-            }
-        });
-    });
-};
-
-module.exports = Header;
-
-},{}],5:[function(require,module,exports){
-'use strict';
-
-// Constructor
-var Product = function() {
-
-    var products = $('._product');
-
-    products.each( function(){
-        var calc = $(this).find('._calculator');
         var minus = $(this).find('._minus');
         var plus = $(this).find('._plus');
         var quantityField = $(this).find('._unit');
@@ -13173,25 +13131,8 @@ var Product = function() {
         var quantity = parseFloat(quantity);
         var amountField = $(this).find('._amount');
         var amount = amountField.val();
-        var price = $(this).find('._price').data('price');
+        var price = $(this).find('._itemPrice').val().replace(',','.');
         var price = parseFloat(price).toFixed(2);
-        var trigger = $(this).find('._desc-trigger');
-        var caption = $(this).find('._caption');
-        var triggerDisplace = caption.height() + 24;
-        var open = false;
-        console.log(triggerDisplace);
-
-        trigger.click(function(){
-            caption.toggleClass('-open');
-
-            if ( !open ) {
-                $(this).css('transform', 'translateY(-' + triggerDisplace + 'px) rotate(-45deg)');
-            } else {
-                $(this).css('transform', 'translateY(0) rotate(0)');
-            }
-
-            open = !open;
-        });
 
         minus.click(function(){
             if ( quantity > 0 ) {
@@ -13225,9 +13166,119 @@ var Product = function() {
     });
 };
 
-module.exports = Product;
+module.exports = Calculator;
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+// Constructor
+var Footer = function() {
+  this.name = 'footer';
+  console.log('%s module', this.name.toLowerCase());
+};
+
+module.exports = Footer;
+
+},{}],5:[function(require,module,exports){
+'use strict';
+// Constructor
+var Header = function() {
+    var header = $('.Header');
+    var shopCart = $('._shop-cart');
+
+    $('._hamburguer').on('click', function(){
+        header.toggleClass('-open');
+        $('body').toggleClass('-hideOverflow');
+    });
+
+    shopCart.on('click', function(){
+        $(this).toggleClass('-open');
+    });
+
+    $(function() {
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 100) {
+                header.removeClass('-ontop');
+            } else {
+                header.addClass('-ontop');
+            }
+        });
+    });
+};
+
+module.exports = Header;
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+// Constructor
+var Product = function() {
+
+    var products = $('._product');
+
+    products.each( function(){
+
+        var trigger = $(this).find('._desc-trigger');
+        var caption = $(this).find('._caption');
+        var triggerDisplace = caption.height() + 24;
+        var open = false;
+
+        trigger.click(function(){
+            caption.toggleClass('-open');
+
+            if ( !open ) {
+                $(this).css('transform', 'translateY(-' + triggerDisplace + 'px) rotate(-45deg)');
+            } else {
+                $(this).css('transform', 'translateY(0) rotate(0)');
+            }
+
+            open = !open;
+        });
+    });
+};
+
+module.exports = Product;
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+// Constructor
+var Shopcart = function() {
+
+    var shopCart = $('._shopcart');
+    var trigger = shopCart.find('._header');
+
+    trigger.click(function(){
+        shopCart.toggleClass('-open');
+        $('body').toggleClass('-hideOverflow');
+    });
+
+    $(window).on("scroll", function() {
+        var scroll = $(window).scrollTop();
+        var shopCartTop = shopCart.get(0).getBoundingClientRect().top;
+        var shopCartBottom = $('footer').get(0).getBoundingClientRect().top;
+
+        if (shopCartBottom <= 750) {
+    	    shopCart.addClass('-bottom');
+    	} else {
+    	    shopCart.removeClass('-bottom');
+    	}
+
+        if ( scroll <= 120 ) {
+            shopCart.removeClass('-fixed');
+        }
+
+        if ( shopCartTop <= 110 ) {
+            shopCart.addClass('-fixed');
+        }
+    });
+};
+
+module.exports = Shopcart;
+
+},{}],8:[function(require,module,exports){
 'use strict';
 // Constructor
 var Home = function() {
@@ -13236,7 +13287,7 @@ var Home = function() {
 
 module.exports = Home;
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 // Main javascript entry point
 // Should handle bootstrapping/starting application
@@ -13244,22 +13295,83 @@ module.exports = Home;
 'use strict';
 
 global.$ = global.jQuery = require('jquery');
+var SmoothScroll = require('./smoothScroll');
 var Header = require('../_modules/header/header');
 var Footer = require('../_modules/footer/footer');
 var Home = require('./home');
 var Product = require('../_modules/product/product');
+var Calculator = require('../_modules/calculator/calculator');
+var Shopcart = require('../_modules/shopcart/shopcart');
+
 
 $(function() {
     require('../../bower_components/slick-carousel/slick/slick');
+    new SmoothScroll();
     new Header();
     new Footer();
     new Home();
     new Product();
+    new Calculator();
+    new Shopcart();
     console.log('Welcome to Los Hermanos!');
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../../bower_components/slick-carousel/slick/slick":1,"../_modules/footer/footer":3,"../_modules/header/header":4,"../_modules/product/product":5,"./home":6,"jquery":2}]},{},[7])
+},{"../../bower_components/slick-carousel/slick/slick":1,"../_modules/calculator/calculator":3,"../_modules/footer/footer":4,"../_modules/header/header":5,"../_modules/product/product":6,"../_modules/shopcart/shopcart":7,"./home":8,"./smoothScroll":10,"jquery":2}],10:[function(require,module,exports){
+'use strict';
+
+// Constructor
+var SmoothScroll = function() {
+
+    if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+    window.onmousewheel = document.onmousewheel = wheel;
+
+    function wheel(event) {
+        var delta = 0;
+        if (event.wheelDelta) delta = event.wheelDelta / 50;
+        else if (event.detail) delta = -event.detail / 3;
+
+        handle(delta);
+        if (event.preventDefault) event.preventDefault();
+        event.returnValue = false;
+    }
+
+    var goUp = true;
+    var end = null;
+    var interval = null;
+
+    function handle(delta) {
+    	var animationInterval = 20; //lower is faster
+      var scrollSpeed = 15; //lower is faster
+
+    	if (end == null) {
+      	end = $(window).scrollTop();
+      }
+      end -= 20 * delta;
+      goUp = delta > 0;
+
+      if (interval == null) {
+        interval = setInterval(function () {
+          var scrollTop = $(window).scrollTop();
+          var step = Math.round((end - scrollTop) / scrollSpeed);
+          if (scrollTop <= 0 ||
+              scrollTop >= $(window).prop("scrollHeight") - $(window).height() ||
+              goUp && step > -1 ||
+              !goUp && step < 1 ) {
+            clearInterval(interval);
+            interval = null;
+            end = null;
+          }
+          $(window).scrollTop(scrollTop + step );
+        }, animationInterval);
+      }
+    }
+
+};
+
+module.exports = SmoothScroll;
+
+},{}]},{},[9])
 
 //# sourceMappingURL=main.js.map

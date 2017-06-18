@@ -1,3 +1,5 @@
+include ../calculator/calculator
+
 mixin product(item)
     ._product
         a._desc-trigger
@@ -9,16 +11,8 @@ mixin product(item)
                 p= item.desc
         ._info
             h6._name= item.name
-            span._price(data-price=item.price)
+            span._price
               | $<span class="_value">#{item.price}</span> / KG 
             span._piece
               | (#{item.piece} KG c/u)
-        ._calculator
-            ._controls
-                a._minus
-                input._unit(value="0", readonly)
-                a._plus
-            ._total
-                span Tu pedido:
-
-                input._amount(value="$0", readonly)
+        +calculator(item.price)

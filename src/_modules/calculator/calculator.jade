@@ -1,0 +1,11 @@
+mixin calculator(price)
+    ._calculator
+        input._itemPrice(type="hidden", value="#{price}")
+        ._controls
+            a._minus
+            input._unit(value="0", readonly)
+            a._plus
+        ._total
+            span Tu pedido:
+
+            input._amount(value="$0", readonly)

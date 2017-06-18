@@ -1,1 +1,238 @@
-// shopcart styles
+._shopcart {
+
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    transition: opacity $duration $easing;
+    opacity: 1;
+    right:0;
+
+    @include breakpoint(md){
+        position: static;
+        box-shadow: none;
+    }
+
+    section {
+        padding: $base/4;
+    }
+
+
+    /* Solo para mostrar el captcha, eliminar luego */
+    .GIF-no-usar {
+        overflow: hidden;
+        position: relative;
+        height: 60px;
+        width: calc(100% + 20px);
+        margin: 0 -10px;
+
+        img{
+            position: absolute;
+            top:50%;
+            transform: translate(-50%, -50%) scale(.9);
+            left:50%;
+        }
+    }
+
+
+    ._header {
+        border-top: 3px solid $lightGray;
+        border-left: 3px solid $lightGray;
+        border-right: 3px solid $lightGray;
+        border-bottom: 1px solid $lightGray;
+        background: $bg;
+
+        @include breakpoint(md){
+            pointer-events: none;
+        }
+
+        a {
+            color: $textDark;
+            display: block;
+            text-align: left;
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+
+            @include breakpoint(md){
+                text-align: center;
+            }
+
+            i{
+                margin-right: 10px;
+                font-size: 24px;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                right:$base/4;
+                transform: rotate(-45deg);
+                border-top: 1px solid $midGray;
+                border-right: 1px solid $midGray;
+                border-bottom: 1px solid rgba(155,155,155,0);
+                border-left: 1px solid rgba(155,155,155,0);
+                width: 15px;
+                height: 15px;
+                top:calc(50% - 4px);
+                transition: all $duration $easing;
+
+                @include breakpoint(md){
+                    display: none;
+                }
+            }
+        }
+    }
+
+    ._body{
+        overflow: hidden;
+        max-height: 0;
+        transition: all 0.5s $easingLight;
+        background: $bg;
+        position: relative;
+        z-index: 10;
+
+        @include breakpoint(md){
+            max-height: none;
+        }
+    }
+
+    ._items {
+        border-left: 3px solid $lightGray;
+        border-right: 3px solid $lightGray;
+        padding-bottom: 0;
+        overflow-y: auto;
+        max-height: 300px;
+
+        @include breakpoint(md){
+            max-height: 180px;
+        }
+
+        @include breakpoint(lg){
+            max-height: 300px;
+        }
+    }
+
+    ._checkout {
+        background: $bgDark;
+        color: $textLight;
+        clear: both;
+
+        ._pedido,
+        ._envio,
+        ._total {
+            display: flex;
+            clear: both;
+            width: 100%;
+            justify-content: space-between;
+
+            input {
+                background: $bgDark;
+                border:none;
+                text-align: right;
+                float: right;
+                font-family: $altFont;
+                font-size:18px;
+                max-width: 100px;
+                margin: 0;
+            }
+
+            ._tag {
+                text-transform: uppercase;
+                font-size: 14px;
+                padding-top: 3px;
+                white-space: nowrap;
+            }
+        }
+
+        ._total {
+            padding-top: $base/4;
+            border-top: 1px solid $midGray;
+            margin: 5px -10px 0;
+            width: calc(100% + 20px);
+            padding: 5px $base/4;
+
+            ._tag {
+                font-size: 16px;
+                font-weight: 700;
+                padding-top: 4px;
+            }
+
+            input {
+                color: $pink;
+                font-size:21px;
+            }
+        }
+
+        ._observaciones {
+            background: $bg;
+            margin: 0 -10px;
+            color: $textDark;
+            padding: $base/4;
+        }
+        ._button {
+            display: block;
+            width: calc(100% + 20px);
+            max-width: none;
+            margin: 0 -$base/4;
+        }
+    }
+
+    ._item-list{
+
+        li {
+            border-bottom: 1px solid $lightGray;
+
+            &:not(:last-child) {
+                margin-bottom: $base/4;
+            }
+        }
+
+        ._name{
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+
+
+    &.-bottom {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &.-open{
+        ._body{
+            max-height: 100vh;
+        }
+
+        ._header {
+
+            a {
+
+                &:after {
+                    content: '';
+                    border-top: 1px solid rgba(155,155,155,0);
+                    border-right: 1px solid rgba(155,155,155,0);
+                    border-bottom: 1px solid $midGray;
+                    border-left: 1px solid $midGray;
+                    top:calc(50% - 12px);
+                }
+            }
+        }
+    }
+
+    &.-fixed {
+        @include breakpoint(md){
+            position: fixed;
+            top:111px;
+            width:212.5px;
+            right: calc(50% - 470px);
+        }
+
+        @include breakpoint(lg){
+            width:262.5px;
+            right: calc(50% - 570px);
+        }
+    }
+}
